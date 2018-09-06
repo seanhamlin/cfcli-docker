@@ -30,4 +30,4 @@ COPY resources/php.ini /etc/php7/php.ini
 
 RUN cfcli
 
-CMD ["php", "-a"]
+ENTRYPOINT ["cfcli"]
