@@ -3,6 +3,7 @@ Cloudflare CLI Docker Alpine PHP CLI Image
 
 A PHP 7.2 CLI container based on Alpine Linux.
 
+
 ## Build the container
 
 Only needed for testing the build actually works.
@@ -11,11 +12,13 @@ Only needed for testing the build actually works.
 $ docker build --no-cache -t seanhamlin/cfcli:dev -f Dockerfile .
 ```
 
+
 ## Download the latest image
 
 ```bash
 $ docker pull seanhamlin/cfcli
 ```
+
 
 ## Run cfcli commands
 
