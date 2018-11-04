@@ -28,6 +28,6 @@ RUN curl -sL 'https://drive.google.com/uc?export=download&id=1ekyddD40wrUBT0GCjH
 
 COPY resources/php.ini /etc/php7/php.ini
 
-RUN cfcli
+RUN cfcli setup:verify
 
 ENTRYPOINT ["cfcli"]
