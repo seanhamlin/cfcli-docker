@@ -4,6 +4,7 @@ WORKDIR /app
 
 RUN apk --no-cache add \
     bash \
+    bind-tools \
     ca-certificates \
     git \
     curl \
