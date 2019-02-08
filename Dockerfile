@@ -16,7 +16,8 @@ RUN apk --no-cache add \
     php7-dom \
     php7-phar \
     php7-tokenizer \
-    php7-iconv
+    php7-iconv \
+    php7-intl
 
 # Fix an issue with iconv
 # @see https://github.com/docker-library/php/issues/240
