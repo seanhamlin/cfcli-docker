@@ -17,12 +17,9 @@ RUN apk --no-cache add \
     php7-phar \
     php7-tokenizer \
     php7-iconv \
-    php7-intl
-
-# Fix an issue with iconv
-# @see https://github.com/docker-library/php/issues/240
-RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
-ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
+    php7-intl \
+    php7-mbstring \
+    php7-xml
 
 # Download the latest phar file from Google Drive.
 RUN curl -sL 'https://drive.google.com/uc?export=download&id=1ekyddD40wrUBT0GCjHo3Kh1JEL8skLqf' > /usr/local/bin/cfcli \
