@@ -27,6 +27,16 @@ RUN curl -sL 'https://drive.google.com/uc?export=download&id=1ekyddD40wrUBT0GCjH
 
 COPY resources/php.ini /etc/php7/php.ini
 
+# Install libsvm, compile from source, and then remove dependencies.
+COPY resources/libsvm.sh /tmp/libsvm.sh
+RUN apk add --no-cache --virtual .build-deps \
+    g++ \
+    make \
+    && chmod +x /tmp/libsvm.sh \
+    && /tmp/libsvm.sh \
+    && rm /tmp/libsvm.sh \
+    && apk del .build-deps
+
 RUN cfcli setup:verify
 
 ENTRYPOINT ["cfcli"]
